@@ -36,6 +36,7 @@ html {
 
 body {
     margin: 0;
+    font-family: 'Georgia', serif;
 }
 
 a:focus {
@@ -51,8 +52,13 @@ h1 {
     font-size: 2em;
 }
 
-abbr[title] {
-    border-bottom: 1px dotted;
+h2, h3 {
+    text-align: center;
+}
+
+h2 {
+    text-transform: uppercase;
+    color: #003366;
 }
 
 b,
@@ -60,131 +66,175 @@ strong {
     font-weight: bold;
 }
 
-dfn {
-    font-style: italic;
-}
-
-mark {
-    background: #ff0;
-    color: #000;
-}
-
-code,
-kbd,
-pre,
-samp {
-    font-family: monospace, serif;
-    font-size: 1em;
-}
-
-pre {
-    white-space: pre-wrap;
-}
-
-q {
-    quotes: "\201C" "\201D" "\2018" "\2019";
-}
-
-small {
-    font-size: 80%;
-}
-
-sub,
-sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
-}
-
-sup {
-    top: -0.5em;
-}
-
-sub {
-    bottom: -0.25em;
-}
-
 img {
     border: 0;
 }
 
-svg:not(:root) {
-    overflow: hidden;
-}
-
-figure {
+section {
     margin: 0;
-}
-
-fieldset {
-    border: 1px solid #c0c0c0;
-    margin: 0 2px;
-    padding: 0.35em 0.625em 0.75em;
-}
-
-legend {
-    border: 0; /* 1 */
-    padding: 0; /* 2 */
-}
-
-button,
-input,
-select,
-textarea {
-    font-family: inherit; /* 1 */
-    font-size: 100%; /* 2 */
-    margin: 0; /* 3 */
-}
-
-button,
-input {
-    line-height: normal;
-}
-
-button,
-html input[type="button"], /* 1 */
-input[type="reset"],
-input[type="submit"] {
-    -webkit-appearance: button; /* 2 */
-    cursor: pointer; /* 3 */
-}
-
-button[disabled],
-html input[disabled] {
-    cursor: default;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-    box-sizing: border-box; /* 1 */
-    padding: 0; /* 2 */
-}
-
-input[type="search"] {
-    -webkit-appearance: textfield; /* 1 */
-    -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box; /* 2 */
-    box-sizing: content-box;
-}
-
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none;
-}
-
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-    border: 0;
     padding: 0;
 }
 
-textarea {
-    overflow: auto; /* 1 */
-    vertical-align: top; /* 2 */
+
+
+
+
+/***********Classes***********/
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
 }
 
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
+.week-grid {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.summary {
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.icon {
+    display: none;
+}
+
+.day {
+    width: 97%; /*400px*/
+    font-size: 1.5em;
+    border: 1px solid black;
+    margin: 5px 5px;
+}
+
+.day-summary {
+
+}
+
+.rightnow {
+    width: 97.5%;
+    margin: 5px 5px;
+    font-size: 1.8em;
+}
+
+.rightnow-summary {
+
+}
+
+.rightnow-advice {
+    display: none;
+}
+
+.group:before, .group:after {
+    display: table;
+    content: "";
+}
+
+.group:after {
+    clear: both;
+}
+
+.group {
+    *zoom: 1;
+}
+
+
+
+
+
+/***********Media queries***********/
+@media all and (min-width:560px) {
+    .rightnow {
+        width: 98.2142857%;
+    }
+
+    .summary {
+        float: left;
+        width: 59.021428571%;
+    }
+
+    .icon {
+        display: block;
+        margin: auto;
+        float:left;
+        width: 40.978571429%;
+        padding-bottom: 40.978571429%; 
+    }
+
+    .sunny {
+        background: url('../images/sunny.png');
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: center;
+    }
+
+    .sunny-rightnow {
+        background-position: 50%;
+    }
+}
+
+@media all and (min-width:768px) {
+    .rightnow {
+        width: 98.6979167%; /*5px margin*/
+    }
+
+    .day {
+        float: left;
+        width: 48.4375%;
+    }
+
+    .advice {
+        display: block;
+    }
+
+    .day-summary {
+        float: none;
+        width: 100%;
+    }
+
+    .rightnow-summary {
+        float: left;
+        width: 50%;
+        padding-top: 3%;
+    }
+
+    .icon {
+        float: none;
+        width: 60%;
+        padding-bottom: 60%; 
+    }
+
+    .rightnow-icon {
+        float: left;
+        width: 50%;
+        padding-bottom: 50%; 
+    }
+
+    .sunny {
+        background-size: 80%;
+        /*background-position: top, center;*/
+    }
+
+    .sunny-rightnow {
+        background-size: 75%;
+    }
+}
+
+@media all and (min-width:1280px) {
+    /*Days*/
+    .day {
+        width: 19.0625%;
+        font-size: 1em;
+    }
+
+    .rightnow {
+        width: 99.21875%;
+        font-size: 1.8em;
+    }
+
+    .rightnow-summary {
+        padding-top:8%;
+    }
 }
