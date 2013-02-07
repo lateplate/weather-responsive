@@ -1,29 +1,13 @@
-<!DOCTYPE html>
-<head>
-    <title>Weather [dankim]</title>
-    <meta charset="UTF-8">
-    
-    <link href="css/styles.css" media="screen" rel="stylesheet" type="text/css">
-
-    <script type="text/javascript" src="//use.typekit.net/shv6osi.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
-    <script>
-
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+<script>
         $(document).ready(function() {
-
-            $.urlParam = function(name){
-                var results = new RegExp('[\\?&amp;]' + name + '=([^&amp;#]*)').exec(window.location.href);
-                return results[1] || 0;
-            }
             
             $.getJSON('weather-data.json', function(json) {
-              // $.getJSON('proxy.php?url=http://api.wunderground.com/api/593fb0bac5e11e4a/conditions/forecast10day/q/' + $.urlParam('zip_code') + '.json', function(json) {
+              
                     // Right now conditions
                     $('#current-temp').html(json.contents.current_observation.temp_f + '&deg;');
-                    $('#current-location').html('in ' + json.contents.current_observation.display_location.full);
+                    $('#current-location').html(json.contents.current_observation.display_location.full);
                     $('#current-condition').html(json.contents.current_observation.weather);
-                    $('#day-one-icon').removeClass('sunny').addClass(json.contents.current_observation.icon);
 
                     // Day 1 conditions  
                     $('#day-one-name').html(json.contents.forecast.simpleforecast.forecastday[1].date.weekday);
@@ -57,63 +41,3 @@
             });
         });
   </script>
-</head>
-<body>
-    <div class="container">
-    	<section class="rightnow group">
-    		<div class="summary summary-rightnow">
-		    		<h2 class="zero-box">Right Now</h2> 
-                    <h3 class="zero-box current-location" id="current-location"></h3>
-		    		<h3 class="small-box" id="current-temp"></h3>
-		    		<h3 class="small-box" id="current-condition"></h3>
-    		</div>
-    		<div class="icon icon-rightnow sunny sunny-rightnow"></div>
-    	</section>
-    	<section class="forecast-grid group">
-    		<div class="forecast group">
-    			<div class="summary summary-forecast">
-		    		<h2 id="day-one-name"></h2> 
-		    		<h3 id='day-one-temp'></h3>
-		    		<h3 id='day-one-conditions'></h3>
-	    		</div>
-	    		<div id="day-one-icon" class="icon sunny"></div>
-    		</div>
-    		<div class="forecast group">
-    			<div class="summary summary-forecast">
-		    		<h2 id="day-two-name"></h2> 
-		    		<h3 id="day-two-temp"></h3>
-		    		<h3 id="day-two-conditions"></h3>
-	    		</div>
-	    		<div id="day-two-icon" class="icon sunny"></div>
-    		</div>
-    		<div class="forecast group">
-    			<div class="summary summary-forecast">
-		    		<h2 id="day-three-name"></h2> 
-		    		<h3 id="day-three-temp"></h3>
-		    		<h3 id="day-three-conditions"></h3>
-	    		</div>
-	    		<div id="day-three-icon" class="icon sunny"></div>
-    		</div>
-    		<div class="forecast group">
-    			<div class="summary summary-forecast">
-                    <h2 id="day-four-name"></h2> 
-                    <h3 id="day-four-temp"></h3>
-                    <h3 id="day-four-conditions"></h3>
-                </div>
-                <div id="day-four-icon" class="icon sunny"></div>
-    		</div>
-    		<div class="forecast group">
-    			<div class="summary summary-forecast">
-                    <h2 id="day-five-name"></h2> 
-                    <h3 id="day-five-temp"></h3>
-                    <h3 id="day-five-conditions"></h3>
-                </div>
-                <div id="day-five-icon" class="icon sunny"></div>
-    		</div>
-    	</section>
-        <footer class="credit-line">
-            Weather data generously provided by <a href="http://www.wunderground.com/weather/api/" target="_blank">
-            <img src="images/wunderground.png" alt="Wunderground.com" width="300"></a>
-        </footer>
-    </div>
-</body>

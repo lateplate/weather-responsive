@@ -36,7 +36,6 @@ html {
 
 body {
     margin: 0;
-    font-family: 'Georgia', serif;
 }
 
 a:focus {
@@ -59,6 +58,12 @@ h2, h3 {
 h2 {
     text-transform: uppercase;
     color: #003366;
+    font-family: "ff-tisa-web-pro", serif;
+}
+
+h3 {
+    font-family: "myriad-pro", sans-serif;
+    font-weight: normal;
 }
 
 b,
@@ -87,44 +92,51 @@ section {
 }
 
 .week-grid {
-    margin: 0 auto;
     width: 100%;
 }
 
 .summary {
     width: 100%;
-    float: left;
+/*    float: left;
     text-align: center;
-    margin: 0 auto;
+    margin: 0 auto;*/
 }
 
 .icon {
     display: none;
 }
 
-.day {
+.forecast {
     width: 97%; /*400px*/
-    font-size: 1.5em;
+    font-size: 1.8em;
     border: 1px solid black;
     margin: 5px 5px;
-}
-
-.day-summary {
-
 }
 
 .rightnow {
     width: 97.5%;
     margin: 5px 5px;
-    font-size: 1.8em;
+    font-size: 2.5em;
 }
 
-.rightnow-summary {
-
+.zero-box {
+    margin: 0;
+    padding: 0;
 }
 
-.rightnow-advice {
-    display: none;
+.small-box {
+    margin: 10px 0;
+    padding: 0;
+}
+
+.current-location {
+    font-size: .5em;
+}
+
+.credit-line {
+    width: 75%;
+    margin: 20px auto;
+    text-align: center;
 }
 
 .group:before, .group:after {
@@ -146,8 +158,13 @@ section {
 
 /***********Media queries***********/
 @media all and (min-width:560px) {
+    .forecast {
+        font-size: 2.0em;
+    }
+
     .rightnow {
         width: 98.2142857%;
+        font-size: 2.2em;
     }
 
     .summary {
@@ -163,11 +180,14 @@ section {
         padding-bottom: 40.978571429%; 
     }
 
-    .sunny {
-        background: url('../images/sunny.png');
-        background-repeat: no-repeat;
+    .sunny, .mostlysunny, .clear {
+        background: url('../images/sunny.png') no-repeat center;
         background-size: 80%;
-        background-position: center;
+    }
+
+    .mostlycloudy, .partlycloudy, .cloudy {
+        background: url('../images/partly-cloudy.png') no-repeat center;
+        background-size: 80%;
     }
 
     .sunny-rightnow {
@@ -178,26 +198,23 @@ section {
 @media all and (min-width:768px) {
     .rightnow {
         width: 98.6979167%; /*5px margin*/
+        font-size: 3.0em;
     }
 
-    .day {
+    .forecast {
         float: left;
         width: 48.4375%;
+        font-size: 2.5em;
     }
 
-    .advice {
-        display: block;
-    }
-
-    .day-summary {
+    .summary-forecast {
         float: none;
         width: 100%;
     }
 
-    .rightnow-summary {
+    .summary-rightnow {
         float: left;
-        width: 50%;
-        padding-top: 3%;
+        width: 65%;
     }
 
     .icon {
@@ -206,35 +223,30 @@ section {
         padding-bottom: 60%; 
     }
 
-    .rightnow-icon {
+    .icon-rightnow {
         float: left;
-        width: 50%;
-        padding-bottom: 50%; 
+        width: 35%;
+        padding-bottom: 35%; 
     }
 
     .sunny {
         background-size: 80%;
-        /*background-position: top, center;*/
     }
 
     .sunny-rightnow {
-        background-size: 75%;
+        background-size: 70%;
     }
 }
 
 @media all and (min-width:1280px) {
-    /*Days*/
-    .day {
+    /*forecasts*/
+    .forecast {
         width: 19.0625%;
-        font-size: 1em;
+        font-size: 1.5em;
     }
 
     .rightnow {
         width: 99.21875%;
-        font-size: 1.8em;
-    }
-
-    .rightnow-summary {
-        padding-top:8%;
+        font-size: 3.0em;
     }
 }
