@@ -22,7 +22,7 @@ $(document).ready(function() {
                     $('#current-temp').html(json.contents.current_observation.temp_f + '&deg;');
                     $('#current-location').html('in ' + json.contents.current_observation.display_location.full);
                     $('#current-condition').html(json.contents.current_observation.weather);
-                    $('#day-one-icon').removeClass('sunny').addClass(json.contents.current_observation.icon);
+                    $('#current-icon').removeClass('sunny-rightnow sunny').addClass(json.contents.current_observation.icon);
 
                     // Day 1 conditions  
                     $('#day-one-name').html(json.contents.forecast.simpleforecast.forecastday[1].date.weekday);
