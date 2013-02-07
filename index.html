@@ -17,8 +17,8 @@
                 return results[1] || 0;
             }
             
-            $.getJSON('weather-data.json', function(json) {
-              // $.getJSON('proxy.php?url=http://api.wunderground.com/api/593fb0bac5e11e4a/conditions/forecast10day/q/' + $.urlParam('zip_code') + '.json', function(json) {
+            // $.getJSON('weather-data.json', function(json) {
+              $.getJSON('proxy.php?url=http://api.wunderground.com/api/593fb0bac5e11e4a/conditions/forecast10day/q/' + $.urlParam('zip_code') + '.json', function(json) {
                     // Right now conditions
                     $('#current-temp').html(json.contents.current_observation.temp_f + '&deg;');
                     $('#current-location').html('in ' + json.contents.current_observation.display_location.full);
