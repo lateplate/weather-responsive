@@ -2,6 +2,7 @@
 <head>
     <title>Weather [dankim]</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <link href="css/styles.css" media="screen" rel="stylesheet" type="text/css">
 
@@ -14,11 +15,22 @@
 
             $.urlParam = function(name){
                 var results = new RegExp('[\\?&amp;]' + name + '=([^&amp;#]*)').exec(window.location.href);
-                return results[1] || 0;
+
+                if(results != null) {
+                    return results[1] || 0;
+                } else {
+                    return null;
+                }
+            }
+
+            var zipCode = $.urlParam('zip_code');
+            var jsonDataSource = 'weather-data.json';
+            
+            if(zipCode != null && zipCode != '') {
+                jsonDataSource = 'proxy.php?url=http://api.wunderground.com/api/593fb0bac5e11e4a/conditions/forecast10day/q/' + zipCode + '.json';
             }
             
-            $.getJSON('weather-data.json', function(json) {
-              // $.getJSON('proxy.php?url=http://api.wunderground.com/api/593fb0bac5e11e4a/conditions/forecast10day/q/' + $.urlParam('zip_code') + '.json', function(json) {
+            $.getJSON(jsonDataSource, function(json) {
                     // Right now conditions
                     $('#current-temp').html(json.contents.current_observation.temp_f + '&deg;');
                     $('#current-location').html('in ' + json.contents.current_observation.display_location.full);
