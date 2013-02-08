@@ -167,8 +167,13 @@ section {
         background-size: 80%;
     }
 
-    .mostlycloudy, .partlycloudy, .cloudy, .snow, .hazy {
+    .mostlycloudy, .partlycloudy, .snow {
         background: url('../images/partly-cloudy.png') no-repeat center;
+        background-size: 80%;
+    }
+
+    .cloudy, .hazy {
+        background: url('../images/cloudy.png') no-repeat center;
         background-size: 80%;
     }
 
@@ -221,7 +226,6 @@ section {
 }
 
 @media all and (min-width:1280px) {
-    /*forecasts*/
     .forecast {
         width: 19.0625%;
         font-size: 1.5em;

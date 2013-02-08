@@ -2,7 +2,7 @@
 <head>
     <title>Weather [dankim]</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=560px, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <link href="css/styles.css" media="screen" rel="stylesheet" type="text/css">
 
@@ -12,61 +12,61 @@
     <script type="text/javascript" src="js/weather.js"></script>
 </head>
 <body>
-    <div class="container">
-    	<section class="rightnow group">
-    		<div class="summary summary-rightnow">
-		    		<h2 class="zero-box">Right Now</h2> 
-                    <h3 class="zero-box current-location" id="current-location"></h3>
-		    		<h3 class="small-box" id="current-temp"></h3>
-		    		<h3 class="small-box" id="current-condition"></h3>
+  <div class="container">
+  	<section class="rightnow group">
+  		<div class="summary summary-rightnow">
+      		<h2 class="zero-box">Right Now</h2> 
+          <h3 class="zero-box current-location" id="current-location"></h3>
+      		<h3 class="small-box" id="current-temp"></h3>
+      		<h3 class="small-box" id="current-condition"></h3>
+  		</div>
+  		<div id="current-icon" class="icon icon-rightnow sunny-rightnow"></div>
+  	</section>
+  	<section class="forecast-grid group">
+  		<div class="forecast group">
+  			<div class="summary summary-forecast">
+      		<h2 id="day-one-name"></h2> 
+      		<h3 id='day-one-temp'></h3>
+      		<h3 id='day-one-conditions'></h3>
     		</div>
-    		<div id="current-icon" class="icon icon-rightnow sunny sunny-rightnow"></div>
-    	</section>
-    	<section class="forecast-grid group">
-    		<div class="forecast group">
-    			<div class="summary summary-forecast">
-		    		<h2 id="day-one-name"></h2> 
-		    		<h3 id='day-one-temp'></h3>
-		    		<h3 id='day-one-conditions'></h3>
-	    		</div>
-	    		<div id="day-one-icon" class="icon sunny"></div>
+    		<div id="day-one-icon" class="icon"></div>
+  		</div>
+  		<div class="forecast group">
+  			<div class="summary summary-forecast">
+      		<h2 id="day-two-name"></h2> 
+      		<h3 id="day-two-temp"></h3>
+      		<h3 id="day-two-conditions"></h3>
     		</div>
-    		<div class="forecast group">
-    			<div class="summary summary-forecast">
-		    		<h2 id="day-two-name"></h2> 
-		    		<h3 id="day-two-temp"></h3>
-		    		<h3 id="day-two-conditions"></h3>
-	    		</div>
-	    		<div id="day-two-icon" class="icon sunny"></div>
+    		<div id="day-two-icon" class="icon"></div>
+  		</div>
+  		<div class="forecast group">
+  			<div class="summary summary-forecast">
+      		<h2 id="day-three-name"></h2> 
+      		<h3 id="day-three-temp"></h3>
+      		<h3 id="day-three-conditions"></h3>
     		</div>
-    		<div class="forecast group">
-    			<div class="summary summary-forecast">
-		    		<h2 id="day-three-name"></h2> 
-		    		<h3 id="day-three-temp"></h3>
-		    		<h3 id="day-three-conditions"></h3>
-	    		</div>
-	    		<div id="day-three-icon" class="icon sunny"></div>
-    		</div>
-    		<div class="forecast group">
-    			<div class="summary summary-forecast">
-                    <h2 id="day-four-name"></h2> 
-                    <h3 id="day-four-temp"></h3>
-                    <h3 id="day-four-conditions"></h3>
-                </div>
-                <div id="day-four-icon" class="icon sunny"></div>
-    		</div>
-    		<div class="forecast group">
-    			<div class="summary summary-forecast">
-                    <h2 id="day-five-name"></h2> 
-                    <h3 id="day-five-temp"></h3>
-                    <h3 id="day-five-conditions"></h3>
-                </div>
-                <div id="day-five-icon" class="icon sunny"></div>
-    		</div>
-    	</section>
-        <footer class="credit-line">
-            Weather data generously provided by <a href="http://www.wunderground.com/weather/api/" target="_blank">
-            <img src="images/wunderground.png" alt="Wunderground.com" width="300"></a>
-        </footer>
-    </div>
+    		<div id="day-three-icon" class="icon"></div>
+  		</div>
+  		<div class="forecast group">
+  			<div class="summary summary-forecast">
+          <h2 id="day-four-name"></h2> 
+          <h3 id="day-four-temp"></h3>
+          <h3 id="day-four-conditions"></h3>
+        </div>
+        <div id="day-four-icon" class="icon"></div>
+  		</div>
+  		<div class="forecast group">
+  			<div class="summary summary-forecast">
+          <h2 id="day-five-name"></h2> 
+          <h3 id="day-five-temp"></h3>
+          <h3 id="day-five-conditions"></h3>
+        </div>
+        <div id="day-five-icon" class="icon"></div>
+  		</div>
+  	</section>
+    <footer class="credit-line">
+        Weather data generously provided by <a href="http://www.wunderground.com/weather/api/" target="_blank">
+      <img src="images/wunderground.png" alt="Wunderground.com" width="300"></a>
+    </footer>
+  </div>
 </body>
